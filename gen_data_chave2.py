@@ -1,5 +1,5 @@
 import string
-from itertools import permutations
+from itertools import product
 
 def totalOfCombinations():
     comb = (10 + 2*26)**8
@@ -20,14 +20,15 @@ def upperletters():
   return string.ascii_uppercase
 
 def genCombinations():
-  data = list(digits() + lowerletters() + upperletters())
-  combinations = list(permutations(data, 8))
-  return combinations
+  data = digits() + lowerletters() + upperletters()
+  perm = list(map(lambda p: "".join(p) + "\n", product(data, repeat=4)))
+  return perm
 
 def main():
   combinations = genCombinations()
   file = open('combinations.txt', 'w')
-  print(combinations)
+  file.writelines(combinations)
+  # print(combinations)
 
 if __name__ == '__main__':
   main()
