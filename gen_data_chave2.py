@@ -21,12 +21,12 @@ def upperletters():
 
 def genCombinations():
   data = digits() + lowerletters() + upperletters()
-  perm = list(map(lambda p: "".join(p) + "\n", product(data, repeat=4)))
+  perm = list(map(lambda p: "".join(p) + "\n", product(data, repeat=5)))
   return perm
 
 def main():
   combinations = genCombinations()
-  file = open('combinations.txt', 'w')
+  file = open('combinations_5.txt', 'w')
   file.writelines(combinations)
   # print(combinations)
 
