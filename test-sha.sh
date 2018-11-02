@@ -1,4 +1,5 @@
 hash="AKCkKOEHZuUPfCLbS0ye8WFnXoDEgw9RFYXlw293vbY="
+#hash="UevYtf8sDnFv9L9QkkUWDqyyhpDqEu/NzbxTm66ldcM="
 status="not found"
 
 while read -r LINE; do
@@ -6,9 +7,9 @@ while read -r LINE; do
   if [ $output == $hash ]
   then
     echo "Found! $LINE"
-    status="found"
+    status="Found! $LINE"
     break
   fi
 done  < $1 > output
 
-echo status
+echo $status
