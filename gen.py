@@ -14,7 +14,9 @@ linesPerFile = 2000
 
 def runTest(fileName):
   print('testing file {}...'.format(fileName))
-  cmd = 'sh test-sha.sh {}'.format(fileName)
+  cmd = 'bash test-sha.sh {}'.format(fileName)
+  os.system(cmd)
+  cmd = 'rm ' + fileName
   os.system(cmd)
   print('back to Python')
 
