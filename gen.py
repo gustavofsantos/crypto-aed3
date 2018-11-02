@@ -9,7 +9,7 @@ digits = string.digits
 chars = lower + upper + digits
 
 initialState = sys.argv[1]
-linesPerFile = 2000000
+linesPerFile = 2000
 
 def runTest(fileName):
   print('testing file {}...'.format(fileName))
@@ -34,7 +34,6 @@ def start(lines=2000000):
   indexes = initialIndexes(initialState)
 
   fileName = 'chave2_{}_{}.txt'.format(initialState, lines)
-
   keys = open(fileName, 'w')
 
   if len(indexes) == 8:
@@ -60,6 +59,10 @@ def start(lines=2000000):
                     if line == lines:
                       keys.close()
                       runTest(fileName)
+
+                      fileName = 'chave2_{}_{}.txt'.format(''.join(key), lines)
+                      keys = open(fileName, 'w')
+
                       line = 0
                   indexes[7] = 0
                 indexes[6] = 0
@@ -92,6 +95,8 @@ def start(lines=2000000):
                   if line == lines:
                     keys.close()
                     runTest(fileName)
+                    fileName = 'chave2_{}_{}.txt'.format(''.join(key), lines)
+                    keys = open(fileName, 'w')
                     line = 0
 
                 indexes[6] = 0
@@ -123,6 +128,8 @@ def start(lines=2000000):
                 if line == lines:
                   keys.close()
                   runTest(fileName)
+                  fileName = 'chave2_{}_{}.txt'.format(''.join(key), lines)
+                  keys = open(fileName, 'w')
                   line = 0
               indexes[5] = 0
             indexes[4] = 0
@@ -150,6 +157,8 @@ def start(lines=2000000):
               if line == lines:
                 keys.close()
                 runTest(fileName)
+                fileName = 'chave2_{}_{}.txt'.format(''.join(key), lines)
+                keys = open(fileName, 'w')
                 line = 0
             indexes[4] = 0
           indexes[3] = 0
@@ -174,6 +183,8 @@ def start(lines=2000000):
             if line == lines:
               keys.close()
               runTest(fileName)
+              fileName = 'chave2_{}_{}.txt'.format(''.join(key), lines)
+              keys = open(fileName, 'w')
               line = 0
           indexes[3] = 0
         indexes[2] = 0
@@ -195,6 +206,8 @@ def start(lines=2000000):
           if line == lines:
             keys.close()
             runTest(fileName)
+            fileName = 'chave2_{}_{}.txt'.format(''.join(key), lines)
+            keys = open(fileName, 'w')
             line = 0
         indexes[2] = 0
       indexes[1] = 0
@@ -213,6 +226,8 @@ def start(lines=2000000):
         if line == lines:
           keys.close()
           runTest(fileName)
+          fileName = 'chave2_{}_{}.txt'.format(''.join(key), lines)
+          keys = open(fileName, 'w')
           line = 0
       indexes[1] = 0
     indexes[0] = 0
@@ -228,6 +243,8 @@ def start(lines=2000000):
       if line == lines:
         keys.close()
         runTest(fileName)
+        fileName = 'chave2_{}_{}.txt'.format(''.join(key), lines)
+        keys = open(fileName, 'w')
         line = 0
     indexes[0] = 0
     keys.close()
