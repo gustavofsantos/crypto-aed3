@@ -9,6 +9,7 @@ digits = string.digits
 chars = lower + upper + digits
 
 initialState = sys.argv[1]
+finalState = sys.argv[2]
 linesPerFile = 2000
 
 def runTest(fileName):
@@ -54,16 +55,21 @@ def start(lines=2000000):
                   for i7 in range(indexes[7] or 0,len(chars)):
                     key[7] = chars[i7]
                     #print(key)
-                    keys.write(''.join(key) + '\n')
+                    lineKey = ''.join(key);
+                    keys.write(lineKey + '\n')
                     line += 1
                     if line == lines:
                       keys.close()
                       runTest(fileName)
 
-                      fileName = 'chave2_{}_{}.txt'.format(''.join(key), lines)
+                      fileName = 'chave2_{}_{}.txt'.format(lineKey, lines)
                       keys = open(fileName, 'w')
 
                       line = 0
+                    if lineKey == finalState:
+                      keys.close()
+                      runTest(fileName)
+                      return;
                   indexes[7] = 0
                 indexes[6] = 0
               indexes[5] = 0
@@ -90,15 +96,21 @@ def start(lines=2000000):
                 for i6 in range(indexes[6] or 0,len(chars)):
                   key[6] = chars[i6]
                   #print(key)
-                  keys.write(''.join(key) + '\n')
+                  lineKey = ''.join(key);
+                  keys.write(lineKey + '\n')
                   line += 1
                   if line == lines:
                     keys.close()
                     runTest(fileName)
-                    fileName = 'chave2_{}_{}.txt'.format(''.join(key), lines)
-                    keys = open(fileName, 'w')
-                    line = 0
 
+                    fileName = 'chave2_{}_{}.txt'.format(lineKey, lines)
+                    keys = open(fileName, 'w')
+
+                    line = 0
+                  if lineKey == finalState:
+                    keys.close()
+                    runTest(fileName)
+                    return;
                 indexes[6] = 0
               indexes[5] = 0
             indexes[4] = 0
@@ -123,14 +135,21 @@ def start(lines=2000000):
               for i5 in range(indexes[5] or 0,len(chars)):
                 key[5] = chars[i5]
                 #print(key)
-                keys.write(''.join(key) + '\n')
+                lineKey = ''.join(key);
+                keys.write(lineKey + '\n')
                 line += 1
                 if line == lines:
                   keys.close()
                   runTest(fileName)
-                  fileName = 'chave2_{}_{}.txt'.format(''.join(key), lines)
+
+                  fileName = 'chave2_{}_{}.txt'.format(lineKey, lines)
                   keys = open(fileName, 'w')
+
                   line = 0
+                if lineKey == finalState:
+                  keys.close()
+                  runTest(fileName)
+                  return;
               indexes[5] = 0
             indexes[4] = 0
           indexes[3] = 0
@@ -152,14 +171,21 @@ def start(lines=2000000):
             for i4 in range(indexes[4] or 0,len(chars)):
               key[4] = chars[i4]
               #print(key)
-              keys.write(''.join(key) + '\n')
+              lineKey = ''.join(key);
+              keys.write(lineKey + '\n')
               line += 1
               if line == lines:
                 keys.close()
                 runTest(fileName)
-                fileName = 'chave2_{}_{}.txt'.format(''.join(key), lines)
+
+                fileName = 'chave2_{}_{}.txt'.format(lineKey, lines)
                 keys = open(fileName, 'w')
+
                 line = 0
+              if lineKey == finalState:
+                keys.close()
+                runTest(fileName)
+                return;
             indexes[4] = 0
           indexes[3] = 0
         indexes[2] = 0
@@ -178,14 +204,21 @@ def start(lines=2000000):
           for i3 in range(indexes[3] or 0,len(chars)):
             key[3] = chars[i3]
             #print(key)
-            keys.write(''.join(key) + '\n')
+            lineKey = ''.join(key);
+            keys.write(lineKey + '\n')
             line += 1
             if line == lines:
               keys.close()
               runTest(fileName)
-              fileName = 'chave2_{}_{}.txt'.format(''.join(key), lines)
+
+              fileName = 'chave2_{}_{}.txt'.format(lineKey, lines)
               keys = open(fileName, 'w')
+
               line = 0
+            if lineKey == finalState:
+              keys.close()
+              runTest(fileName)
+              return;
           indexes[3] = 0
         indexes[2] = 0
       indexes[1] = 0
@@ -201,14 +234,21 @@ def start(lines=2000000):
         for i2 in range(indexes[2] or 0,len(chars)):
           key[2] = chars[i2]
           #print(key)
-          keys.write(''.join(key) + '\n')
+          lineKey = ''.join(key);
+          keys.write(lineKey + '\n')
           line += 1
           if line == lines:
             keys.close()
             runTest(fileName)
-            fileName = 'chave2_{}_{}.txt'.format(''.join(key), lines)
+
+            fileName = 'chave2_{}_{}.txt'.format(lineKey, lines)
             keys = open(fileName, 'w')
+
             line = 0
+          if lineKey == finalState:
+            keys.close()
+            runTest(fileName)
+            return;
         indexes[2] = 0
       indexes[1] = 0
     indexes[0] = 0
@@ -221,14 +261,21 @@ def start(lines=2000000):
       for i1 in range(indexes[1] or 0,len(chars)):
         key[1] = chars[i1]
         #print(key)
-        keys.write(''.join(key) + '\n')
+        lineKey = ''.join(key);
+        keys.write(lineKey + '\n')
         line += 1
         if line == lines:
           keys.close()
           runTest(fileName)
-          fileName = 'chave2_{}_{}.txt'.format(''.join(key), lines)
+
+          fileName = 'chave2_{}_{}.txt'.format(lineKey, lines)
           keys = open(fileName, 'w')
+
           line = 0
+        if lineKey == finalState:
+          keys.close()
+          runTest(fileName)
+          return;
       indexes[1] = 0
     indexes[0] = 0
     keys.close()
