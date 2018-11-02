@@ -60,6 +60,7 @@ def start(lines=2000000):
                     if line == lines:
                       keys.close()
                       runTest(fileName)
+                      line = 0
                   indexes[7] = 0
                 indexes[6] = 0
               indexes[5] = 0
@@ -91,6 +92,7 @@ def start(lines=2000000):
                   if line == lines:
                     keys.close()
                     runTest(fileName)
+                    line = 0
 
                 indexes[6] = 0
               indexes[5] = 0
@@ -121,6 +123,7 @@ def start(lines=2000000):
                 if line == lines:
                   keys.close()
                   runTest(fileName)
+                  line = 0
               indexes[5] = 0
             indexes[4] = 0
           indexes[3] = 0
@@ -147,6 +150,7 @@ def start(lines=2000000):
               if line == lines:
                 keys.close()
                 runTest(fileName)
+                line = 0
             indexes[4] = 0
           indexes[3] = 0
         indexes[2] = 0
@@ -170,6 +174,7 @@ def start(lines=2000000):
             if line == lines:
               keys.close()
               runTest(fileName)
+              line = 0
           indexes[3] = 0
         indexes[2] = 0
       indexes[1] = 0
@@ -190,6 +195,7 @@ def start(lines=2000000):
           if line == lines:
             keys.close()
             runTest(fileName)
+            line = 0
         indexes[2] = 0
       indexes[1] = 0
     indexes[0] = 0
@@ -207,6 +213,7 @@ def start(lines=2000000):
         if line == lines:
           keys.close()
           runTest(fileName)
+          line = 0
       indexes[1] = 0
     indexes[0] = 0
     keys.close()
@@ -221,6 +228,7 @@ def start(lines=2000000):
       if line == lines:
         keys.close()
         runTest(fileName)
+        line = 0
     indexes[0] = 0
     keys.close()
     runTest(fileName)
